@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>সূরা | আল কোরআন</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <h1 id="surah-title">সূরা</h1>
+
+  <!-- Dark Mode Button -->
+  <button onclick="toggleDarkMode()" class="dark-toggle">
+    🌙 ডার্ক মোড
+  </button>
+</header>
+
+<!-- ===== Bookmark Toggle ===== -->
+<button onclick="toggleBookmarks()" class="bookmark-toggle">
+  ⭐ বুকমার্ক দেখুন
+</button>
+
+<!-- ===== Bookmark Panel ===== -->
+<div id="bookmark-panel" class="bookmark-panel" style="display:none;">
+  <h3>📌 বুকমার্ক করা আয়াত</h3>
+  <div id="bookmark-list"></div>
+</div>
+
+<!-- ===== Ayah Container ===== -->
+<main id="ayah-container">
+  <p style="text-align:center;">লোড হচ্ছে...</p>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <p>
+    আরবি: Quran Uthmani |
+    বাংলা: Bengali Translation |
+    English: Sahih International
+  </p>
+</footer>
+
+<!-- ===== JavaScript ===== -->
+<script src="js/quran.js"></script>
+
+<!-- ===== Dark Mode Script (inline support) ===== -->
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Load saved theme on page load
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+</script>
+
+</body>
+</html>

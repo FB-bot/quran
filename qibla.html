@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>🕋 কিবলা ও নামাজের সময়</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>🕋 কিবলা ও নামাজের সময়</h1>
+
+  <button onclick="toggleDarkMode()" class="dark-toggle">
+    🌙 ডার্ক মোড
+  </button>
+</header>
+
+<main>
+
+  <!-- ===== Qibla Section ===== -->
+  <section class="ayah">
+    <h2>🕋 কিবলা দিক</h2>
+    <p id="qibla-status">লোকেশন নেওয়া হচ্ছে...</p>
+    <p id="qibla-degree"></p>
+  </section>
+
+  <!-- ===== Prayer Time Section ===== -->
+  <section class="ayah">
+    <h2>🕌 আজকের নামাজের সময়</h2>
+    <ul id="prayer-times">
+      <li>লোড হচ্ছে...</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>Prayer Time API: Aladhan.com</p>
+</footer>
+
+<script src="js/qibla.js"></script>
+
+<!-- Dark mode support -->
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("dark") ? "dark" : "light"
+    );
+  }
+
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+</script>
+
+</body>
+</html>
